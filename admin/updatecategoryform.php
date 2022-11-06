@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
- <?php
+<?php
  require('../controllers/product_controller.php');
 
 
@@ -18,7 +18,9 @@ if(isset($_GET['updateid'])){
  ?>
 	<h1>Update</h1>
 
-<div class="container">
+
+
+
 
      <form method="POST"  action="../actions/update_category.php">  
         <div class="form-group">

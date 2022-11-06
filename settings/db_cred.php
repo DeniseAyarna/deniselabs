@@ -12,5 +12,3 @@ define('USERNAME', 'be886e61836509');
 // define('USERNAME', 'root');
 
 ?>
-
-mysql://be886e61836509:7ead5cb8@us-cdbr-east-06.cleardb.net/heroku_a0d572382ebc5e8?reconnect=true
