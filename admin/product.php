@@ -307,7 +307,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
                             $producttitle = $record['product_title'];
                             $productprice = $record['product_price'];
                             $productdesc = $record['product_desc'];
-                            $productimage= $record['product_image'];
+                            $fileDestination= $record['product_image'];
                             $productkey = $record['product_keywords'];
                             $productbrand = $record['product_brand'];
                             $productcat = $record['product_cat'];
@@ -326,7 +326,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
                             <td>'.$producttitle.'</td>
                             <td>'.$productprice.'</td>
                             <td>'.$productdesc.'</td>
-                            <td>'.$productimage.'</td>
+                            <td>'.$fileDestination.'</td>
                            <td>'.$productkey.'</td>
                            <td>'.$productbrand.'</td>
                            <td>'.$productcat.'</td>

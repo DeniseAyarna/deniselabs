@@ -3,8 +3,8 @@ require('../controllers/product_controller.php');
 
 //updating data
 
-if (isset($_GET['updateButton'])){
-    $id=$_GET['updateid'];
+if (isset($_POST['updateButton'])){
+    $id=$_POST['product_id'];
     $productcat = $_POST['product_cat'];
     $productbrand = $_POST['product_brand'];
     $producttitle = $_POST['product_title'];
@@ -13,8 +13,47 @@ if (isset($_GET['updateButton'])){
     //$productimage = $_POST['product_image'];
     $productkey = $_POST['product_keywords'];
     
+    $file = $_FILES["product_image"];
+    $fileName = $_FILES['product_image']['name'];
+    $fileTmpName = $_FILES['product_image']['tmp_name'];
+    $fileSize = $_FILES['product_image']['size'];
+    $fileError = $_FILES['product_image']['error'];
+    $fileType = $_FILES['product_image']['type'];
+
+    $fileExt = explode(".", $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+    // enforcing file compatibility
+    $allowed = array("jpg","jpeg","png","pdf");
+
+    // checking the file type
+    if(in_array($fileActualExt, $allowed)){
+        // checking if theres an error in uploading file
+        if($fileError === 0){
+            // checking to see if the filesize is big or small enough
+            if($fileSize < 5000000){
+                // creates microseconds based on our current time in microseconds. so that the random number is not the same as something we have already uploaded
+                $fileNameNew = uniqid('',true).".".$fileActualExt;
+
+                // Directing the file to the destination in our code we want it
+                $fileDestination = '../images/products/'.$fileNameNew;
+
+                // moving file to the categories section of images
+                $move = move_uploaded_file($fileTmpName, $fileDestination);
+                // Tell us that our upload has been successful or has failed;
+              
+            }else{
+                echo "Your file is too big";
+            }
+        }else{
+            echo "You cannot upload this type of files";
+        }
+    }else{
+        echo "You cannot upload file of this type";
+    }
+    
    
-    $result= update_all_products_ctr($id,$productcat,$productbrand,$producttitle,$productprice,$productdesc,$productimage,$productkeyword);
+    $result= update_all_products_ctr($id,$productcat,$productbrand,$producttitle,$productprice,$productdesc,$fileDestination,$productkey);
     if($result==true){
         echo "Update sucessful";
         header("Location: ../admin/product.php");

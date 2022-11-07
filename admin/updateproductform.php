@@ -42,7 +42,7 @@ if(isset($_GET['updateid'])){
                       
                       <input type="text" class="form-control" name="product_keywords" id="product_keywords" placeholder="keywords">
 
-
+                      <input class="form-control" type="hidden"  name="product_id" value="<?php echo $product['product_id'] ?>">
                       
                      
                       <select name= "product_brand" aria-placeholder="brand" class="form-control">
@@ -73,7 +73,8 @@ if(isset($_GET['updateid'])){
                         ?>
                         </select>
                         </div>
-                      <button type="submit" name="save" class="btn btn-primary mb-2">Add Product</button>
+                        <input type="submit" name="updateButton"class="btn btn-primary mb-2" value=Update >
+                      <!-- <button type="submit" name="save" class="btn btn-primary mb-2">Update Product</button> -->
                       </form>
 </div>
 </body>
