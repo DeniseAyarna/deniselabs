@@ -26,7 +26,7 @@ class product_class extends db_connection
 		$sql= "INSERT INTO products (product_cat,product_brand,product_title,product_price,product_desc,product_image,product_keywords) VALUES ('$a','$b','$c','$d','$e','$f','$g')";
 		return $this->db_query($sql);
 	}
-
+	
 
 	
 	//--SELECT--//
@@ -55,8 +55,8 @@ function update_all_categories_cls($id,$cname){
 	$sql= "UPDATE categories set cat_name = '$cname'  where cat_id ='$id' ";
 	return $this->db_query($sql);
 }
-function update_all_products_cls($id,$productcat,$productbrand,$producttitle,$productprice,$productdesc,$productimage,$productkeyword){
-	$sql= "UPDATE products set product_cat ='$productcat' product_brand= '$productbrand' product_title='$producttitle' product_price='$productprice' product_desc='$productdesc' product_image='$productimage' product_keywords = '$productkeyword'  where product_id ='$id' ";
+function update_all_products_cls($id,$productcat,$productbrand,$producttitle,$productprice,$productdesc,$fileDestination,$productkeyword){
+	$sql= "UPDATE products set product_cat ='$productcat', product_brand= '$productbrand', product_title='$producttitle', product_price='$productprice', product_desc='$productdesc', product_image='$fileDestination' ,product_keywords = '$productkeyword'  where product_id ='$id' ";
 	return $this->db_query($sql);
 }
     
@@ -100,5 +100,15 @@ function select_one_product_cls($id){
             return $this->db_fetch_one("SELECT * from products where product_id='$id'");
     }
 
+
+
+function list_all_products_cls($title){
+
+	// return array or false
+		// return associative array or false
+		return $this->db_fetch_one("select * from products where (`product_title` like '".$title."%') ");
 }
+
+}
+
 ?>

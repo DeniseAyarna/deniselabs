@@ -48,34 +48,22 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Hairsal</a></h1>
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Dias Beauty</a></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="has-children active">
-                  <a href="index.html">Home</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <a href="index.php">Home</a>
+                 
                 </li>
                 <li class="has-children">
-                  <a href="haircut.html">Haircut</a>
+                  <a href="view/all_products.php">Products</a>
                   <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
+                    <li><a href="#">HAIR TOOLS</a></li>
+                    <li><a href="#">HAIR EXTENSIONS</a></li>
+                    <li><a href="#">PRESS ON NAILS</a></li>
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
@@ -90,7 +78,7 @@
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li>
-                  <a href="#" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
+                  <a href="cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
                 </li>
                 <li>
                   <a href="login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
@@ -117,13 +105,13 @@
 
     <div class="slide-one-item home-slider owl-carousel">
       
-      <div class="site-blocks-cover" style="background-image: url(images/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover" style="background-image: url(images/images/blackgirlhair.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h5 class="text-white font-weight-light text-uppercase">Welcome to Hairsal</h5>
-              <h2 class="text-white font-weight-light mb-2 display-1">Hair Salon Expert</h2>
+              <h5 class="text-white font-weight-light text-uppercase">Welcome to DiasBeauty Studio</h5>
+              <h2 class="text-white font-weight-light mb-2 display-1">Beauty Salon Experts</h2>
 
               <p><a href="#" class="btn btn-black py-3 px-5">Book Now!</a></p>
             </div>
@@ -131,7 +119,7 @@
         </div>
       </div>  
 
-      <div class="site-blocks-cover" style="background-image: url(images/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover" style="background-image: url(images/images/blackgirlblackhair.webp);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
@@ -151,13 +139,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4 text-center">
-            <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Welcome to</span> <span class="d-block display-4 line-height-1"><em class="text-primary font-weight-bold">Hair Salon</em></span></h3>
+            <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Welcome to</span> <span class="d-block display-4 line-height-1"><em class="text-primary font-weight-bold">Beauty Salon</em></span></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt architecto ab hic rem placeat eius commodi eum eligendi recusandae sed qui cumque quibusdam.</p>
             <p><a href="#"><small class="text-uppercase font-weight-bold">Read More</small></a></p>
           </div>
           <div class="col-md-6 col-lg-4">
             <figure class="h-100 hover-bg-enlarge">
-              <div class="bg-image h-100 bg-image-md-height" style="background-image: url('images/images/img_2.jpg');"></div>
+              <div class="bg-image h-100 bg-image-md-height" style="background-image: url('images/images/blackgirlblackhair2.jpeg');"></div>
             </figure>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -227,10 +215,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5">
-            <img src="images/images/person_1.jpg" alt="Image" class="img-md-fluid">
+            <img src="images/images/nails2.jpeg" alt="Image" class="img-md-fluid">
           </div>
           <div class="col-lg-6 bg-white p-md-5 align-self-center">
-            <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">New hairstyle!</h2>
+            <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">Tried Our Pressons!</h2>
             <p class="text-black lead"><em>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</em></p>
             <p class="lead text-black">&mdash; <em>Stellla Martin</em></p>
           </div>
@@ -257,7 +245,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Hairsal</h3>
+              <h3 class="footer-heading mb-4">About DiasBeauty</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
             </div>
 

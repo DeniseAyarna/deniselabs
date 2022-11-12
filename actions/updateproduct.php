@@ -30,18 +30,18 @@ if (isset($_POST['updateButton'])){
     if(in_array($fileActualExt, $allowed)){
         // checking if theres an error in uploading file
         if($fileError === 0){
-            // checking to see if the filesize is big or small enough
+            // checking to see if the filesize if good
             if($fileSize < 5000000){
                 // creates microseconds based on our current time in microseconds. so that the random number is not the same as something we have already uploaded
-                $fileNameNew = uniqid('',true).".".$fileActualExt;
+                //$fileNameNew = uniqid('',true).".".$fileActualExt;
 
                 // Directing the file to the destination in our code we want it
-                $fileDestination = '../images/products/'.$fileNameNew;
+                $fileDestination = '../images/products/'.$fileName;
 
                 // moving file to the categories section of images
                 $move = move_uploaded_file($fileTmpName, $fileDestination);
-                // Tell us that our upload has been successful or has failed;
-              
+                // Tell us that our upload has been successful;
+                // header("location: ../Admin/Category.php?uploadsuccess");
             }else{
                 echo "Your file is too big";
             }
@@ -51,7 +51,6 @@ if (isset($_POST['updateButton'])){
     }else{
         echo "You cannot upload file of this type";
     }
-    
    
     $result= update_all_products_ctr($id,$productcat,$productbrand,$producttitle,$productprice,$productdesc,$fileDestination,$productkey);
     if($result==true){

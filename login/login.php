@@ -37,10 +37,7 @@
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
+					<p class="login-card-footer-text">Don't have an account? <a href="./register.php" class="text-reset">Register here</a></p>
 								</div>
 								<div class="w-50 text-md-right">
 									<a href="#" style="color: #fff">Forgot Password</a>

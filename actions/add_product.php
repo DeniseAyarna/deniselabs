@@ -36,7 +36,7 @@ if(isset($_POST['save'])){
                 $fileNameNew = uniqid('',true).".".$fileActualExt;
 
                 // Directing the file to the destination in our code we want it
-                $fileDestination = '../images/product/'.$fileNameNew;
+                $fileDestination = '../images/products/'.$fileNameNew;
 
                 // moving file to the categories section of images
                 $move = move_uploaded_file($fileTmpName, $fileDestination);
