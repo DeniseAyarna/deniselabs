@@ -42,6 +42,23 @@ border-bottom-right-radius: 16px;
 </style>
   </head>
   <body>
+  <?php
+require('../controllers/cart_controllers.php');
+
+
+$id = isset($_SESSION['customer_id']);
+
+    $product = select_allincart_ctr($id, getenv("REMOTE_ADDR"));
+   // $total = check_total($id, getenv("REMOTE_ADDR"));
+
+    // foreach($total as $total)
+
+    // $_SESSION["total"] = $total["total"];
+
+
+
+
+?>
 
 <section class="h-100 h-custom" style="background-color: #d2c9ff;">
   <div class="container py-5 h-100">

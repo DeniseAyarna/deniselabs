@@ -27,6 +27,7 @@ class product_class extends db_connection
 		return $this->db_query($sql);
 	}
 	
+	
 
 	
 	//--SELECT--//
@@ -108,6 +109,7 @@ function list_all_products_cls($title){
 		// return associative array or false
 		return $this->db_fetch_one("select * from products where (`product_title` like '".$title."%') ");
 }
+
 
 }
 

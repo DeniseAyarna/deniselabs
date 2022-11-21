@@ -59,7 +59,9 @@
   <?php 
        require('../controllers/product_controller.php');
         
+      
         
+      
     ?>
   <div class="site-wrap">
 
@@ -120,6 +122,8 @@
   <form action="/action_page.php" class="d-flex justify-content-between">
     
     <input type="text" placeholder="Search.." name="search"   >
+
+</form>
     
   </div>
 </div>
@@ -197,13 +201,13 @@
             <div class="h-100 bg-light site-block-feature-7">
             <div class="container">
               <img src="<?php echo $result1[$i]['product_image'];?>" alt="Image" class="img-fluid">
-              <button class="btn" ><a href="./single_product.php?id=<?php echo $result1[$i]['product_id']?>"</a><i class="icomoon icon-eye"></i></button> 
+              <button class="btn"><a href="./single_product.php?id=<?php echo $result1[$i]['product_id']?>"</a><i class="icomoon icon-eye"></i></button> 
               </div>
               
               <div class="p-4 p-lg-5">
                 <h3 class="text-black h4"><?php echo $result1[$i]['product_title'];?></h3>
                 <p><strong class="font-weight-bold text-primary"> GHC <?php echo $result1[$i]['product_price'];?>.00</strong>
-                 <a href="../actions/add_cart.php?id=<?php echo $result1[$i]['product_id']?>" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>   </p>
+                 <a href="../actions/add_cart.php?id=<?php echo $result1[$i]['product_id']?>" name="addtocart "class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>   </p>
               </div>
             </div>
           </div>

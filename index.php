@@ -27,7 +27,7 @@
     
   </head>
   <body>
-  
+ 
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -78,11 +78,27 @@
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li>
-                  <a href="cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
+                  <a href="view/shoping-cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
                 </li>
+                <?php
+                session_start();
+if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])) {
+ 
+?>
                 <li>
-                  <a href="login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
+                <a href="login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
                 </li>
+                <?php }
+                
+                else { ?>
+                
+                  <li>
+                  <a href="./actions/logoutprocess.php" class="pl-3 pr-3 text-black">LOGOUT</a>
+                  
+                </li>
+               <?php }?>
+
+                
                 <li>
                   <a href="login/register.php"" class="pl-3 pr-3 text-black">REGISTER</a>
                 </li>
