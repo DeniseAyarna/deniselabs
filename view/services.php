@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../fontawesome/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../fonteawesome/fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="../css/css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/css/style.css">
     
   </head>
   <body>
@@ -44,82 +44,94 @@
 
     <header class="site-navbar py-1" role="banner">
 
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          
-          <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Hairsal</a></h1>
-          </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+<div class="container-fluid">
+  <div class="row align-items-center">
+    
+    <div class="col-6 col-xl-2" data-aos="fade-down">
+      <h1 class="mb-0"><a href="../index.php" class="text-black h2 mb-0">DiasBeauty</a></h1>
+    </div>
+    <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+      <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="has-children">
-                  <a href="index.html">Home</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="has-children">
-                  <a href="haircut.html">Haircut</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                  </ul>
-                </li>
-                <li class="active"><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="booking.html">Book Online</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-
-          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
-            <div class="d-none d-xl-inline-block">
-              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                <li>
-                  <a href="#" class="pl-0 pr-3 text-black"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-youtube-play"></span></a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-          </div>
-
-        </div>
-      </div>
+        <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+          <li class="has-children">
+            <a href="../index.php">Home</a>
+            
+          </li>
+          <li class="has-children active">
+            <a href="all_products.php">Products</a>
+            <ul class="dropdown">
+              <li><a href="#">HAIR TOOLS</a></li>
+              <li><a href="#">PRESS ON NAILS</a></li>
+              <li><a href="#">HAIR EXTENSIONS</a></li>
+            
+            </ul>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="booking.html">Book Online</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       
-    </header>
+       
+        
+
+        
+      </nav>
+    </div>
+   
+    <div class="dropdown">
+<button  style="background-color:transparent; border:0px; padding-right: 30px;" class="button" border="none;" color="blue;" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icomoon icon-search"></i>
+
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<form action="/action_page.php" class="d-flex justify-content-between">
+
+<input type="text" placeholder="Search.." name="search"   >
+
+</form>
+
+</div>
+</div>
+
+<a href="shoping-cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
+
+    <!-- <div class="search-container" >
+<form action="/action_page.php" class="d-flex justify-content-between">
+
+<input type="text" placeholder="Search.." name="search"   >
+
+<button type="submit"><i class="icomoon icon-search"></i></button>
+</form>
+<a href="shopping_cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
+</div> -->
+          
+
+    <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+      <div class="d-none d-xl-inline-block">
+        <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+      
+         
+
+      <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+      
+    </div>
+
+  </div>
+</div>
+
+</header>
+
 
   
+
+
 
    
 
     <div class="slide-one-item home-slider owl-carousel">
    
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(../images/images/blackgirlhair.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
@@ -302,19 +314,19 @@
     </footer>
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="../js/js/jquery-3.3.1.min.js"></script>
+  <script src="../js/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/js/jquery-ui.js"></script>
+  <script src="../js/js/popper.min.js"></script>
+  <script src="../js/js/bootstrap.min.js"></script>
+  <script src="../js/js/owl.carousel.min.js"></script>
+  <script src="../js/js/jquery.stellar.min.js"></script>
+  <script src="../js/js/jquery.countdown.min.js"></script>
+  <script src="../js/js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/js/bootstrap-datepicker.min.js"></script>
+  <script src="../js/js/aos.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="../js/js/main.js"></script>
     
   </body>
 </html>

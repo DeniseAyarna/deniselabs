@@ -1,5 +1,3 @@
-
-
 <?php
 
 require('../controllers/cart_controllers.php');
@@ -31,9 +29,6 @@ if(isset($_GET['id'])){
     $result = insert_into_cart_ctr($id,$customerip,$customerid,$qty);
 
     if($result===TRUE){
-        
-        echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-        
         header("Location: ../view/all_products.php?error=Added Successfully");
     } else {
         echo "fail";

@@ -44,6 +44,10 @@ function select_all_products_ctr(){
     return $item->select_all_products_cls();
 }
 
+
+
+
+
 //--UPDATE--//
 function update_all_records_ctr($id,$bname){
     // Creates an instance of the general class and appends it to $item
@@ -112,5 +116,11 @@ function select_one_category_ctr($id){
     return $item->list_all_products_cls($title);
 }
 
+function select_by_category_ctr($cat){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_by_category_cls($cat);
+}
 
 ?>

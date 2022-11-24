@@ -79,6 +79,7 @@ function update_all_products_cls($id,$productcat,$productbrand,$producttitle,$pr
 
 	}
 
+	
 
 	function select_one_contact_cls($id){
 
@@ -107,9 +108,14 @@ function list_all_products_cls($title){
 
 	// return array or false
 		// return associative array or false
-		return $this->db_fetch_one("select * from products where (`product_title` like '".$title."%') ");
+		return $this->db_fetch_one("SELECT * from products where (`product_title` like '".$title."%') ");
 }
 
+
+function select_by_category_cls($pid){
+	// return associative array or false
+	return $this->db_fetch_all("SELECT * from categories inner join products on  product_id = p_id where product_cat = '$pid' ");
+}
 
 }
 

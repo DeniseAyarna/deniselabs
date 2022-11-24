@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,6 +60,8 @@
   <body>
   <?php 
        require('../controllers/product_controller.php');
+      
+       
         
       
         
@@ -93,17 +97,10 @@
                   <a href="../index.php">Home</a>
                   
                 </li>
-                <?php
-                        $result1= select_all_products_ctr();
-                        
-
-                             
-                            
-                        ?>
                 <li class="has-children active">
                   <a href="all_products.php">Products</a>
                   <ul class="dropdown">
-                    <li><a href="categoryproduct.php?id=<?php echo $result1['product_cat']?>">HAIR TOOLS</a></li>
+                    <li><a href="#">HAIR TOOLS</a></li>
                     <li><a href="#">PRESS ON NAILS</a></li>
                     <li><a href="#">HAIR EXTENSIONS</a></li>
                   
@@ -225,10 +222,10 @@
         
         <div class="row">
         <?php
-                        $result1= select_all_products_ctr();
+                        $result1= select_by_category_ctr($pid);
                         $i=0;
                         while($i<count($result1)){
-                    foreach ($result1 as $record);      
+                          
 
                              
                             

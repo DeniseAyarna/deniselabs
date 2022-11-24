@@ -48,7 +48,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Dias Beauty</a></h1>
+            <h1 class="mb-0"><a href="index.php" class="text-black h2 mb-0">Dias Beauty</a></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
@@ -66,9 +66,9 @@
                     <li><a href="#">PRESS ON NAILS</a></li>
                   </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="./view/services.php">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="booking.html">Book Online</a></li>
+                <li><a href="booking.html">Bookings</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </nav>
@@ -106,7 +106,6 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               </ul>
             </div>
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
           </div>
 
@@ -129,7 +128,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <h5 class="text-white font-weight-light text-uppercase">Welcome to DiasBeauty Studio</h5>
               <h2 class="text-white font-weight-light mb-2 display-1">Beauty Salon Experts</h2>
 
-              <p><a href="#" class="btn btn-black py-3 px-5">Book Now!</a></p>
+              <p><a href="./view/services.php" class="btn btn-black py-3 px-5">Book Now!</a></p>
             </div>
           </div>
         </div>
@@ -142,7 +141,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
               <h2 class="text-white font-weight-light mb-2 display-1">Beautiful Hair, Healthy You!</h2>
 
-              <p><a href="#" class="btn btn-black py-3 px-5">Book Now!</a></p>
+              <p><a href="./view/services.php" class="btn btn-black py-3 px-5">Book Now!</a></p>
             </div>
           </div>
         </div>
@@ -155,9 +154,9 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4 text-center">
-            <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Welcome to</span> <span class="d-block display-4 line-height-1"><em class="text-primary font-weight-bold">Beauty Salon</em></span></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt architecto ab hic rem placeat eius commodi eum eligendi recusandae sed qui cumque quibusdam.</p>
-            <p><a href="#"><small class="text-uppercase font-weight-bold">Read More</small></a></p>
+            <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Welcome to</span> <span class="d-block display-4 line-height-1"><em class="text-primary font-weight-bold">Dias Beauty Studio</em></span></h3>
+            <p> The studio offers a variety of services for all your beauty needs. At Dias Beauty Studio , you can be assured quality service as its best as all our workers are professionals constantly in taraining</p>
+            <p><a href="./view/about.html"><small class="text-uppercase font-weight-bold">Read More</small></a></p>
           </div>
           <div class="col-md-6 col-lg-4">
             <figure class="h-100 hover-bg-enlarge">
@@ -201,25 +200,25 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
           <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
             <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
               <span class="icon flaticon-razor display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Barber Razor</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$29</strong></p>
+              <h3 class="text-black h4">Braiding</h3>
+              <p>Quality and neat braids of all types at affordable prices</p>
+              
             </div>
           </div>
           <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
             <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
               <span class="icon flaticon-location-pin display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Location Pin</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$46</strong></p>
+              <h3 class="text-black h4">Wig Making </h3>
+              <p>Have bundles? Well whether you do or not , we offer wig construction.</p>
+              
             </div>
           </div>
           <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
             <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
               <span class="icon flaticon-shave display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Barber Shave</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$24</strong></p>
+              <h3 class="text-black h4">Manicure</h3>
+              <p>Get those fingers cleaned and looking amazing with a touch of Dias</p>
+              
             </div>
           </div>
 
@@ -235,8 +234,8 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
           </div>
           <div class="col-lg-6 bg-white p-md-5 align-self-center">
             <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">Tried Our Pressons!</h2>
-            <p class="text-black lead"><em>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</em></p>
-            <p class="lead text-black">&mdash; <em>Stellla Martin</em></p>
+            <p class="text-black lead"><em>&ldquo;Aside our walk-in , in person services.Dias Beauty Studio offers a variety of stylish , sophisticated press on nails for the go , you can check from our products to purchase yours today!&rdquo;</em></p>
+            <p class="lead text-black"> </p>
           </div>
         </div>
       </div>
@@ -275,20 +274,13 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Barbers</a></li>
-                  <li><a href="#">News</a></li>
+                  <li><a href="./index.php">Home</a></li>
+                  <li><a href="./view/services.php">Services</a></li>
+                  <li><a href="./view/about.html">About</a></li>
                   <li><a href="#">Team</a></li>
                 </ul>
               </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Membership</a></li>
-                </ul>
-              </div>
+              
             </div>
 
             
@@ -298,20 +290,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
           <div class="col-lg-4 mb-5 mb-lg-0">
            
 
-            <div class="mb-5">
-              <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
-
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
-                  </div>
-                </div>
-              </form>
-
-            </div>
+            
 
           </div>
           

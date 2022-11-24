@@ -259,7 +259,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
                            <td>
                            
                            <button class="btn btn-primary"><a href="../admin/updatecategoryform.php?updateid='.$id.'" class="text-light">Update</a></button>
-                           <button class="btn btn-primary"><a href="../actions/delete.php?deleteid='.$id.'"class="text-light">Delete</a></button>
+                           <button class="btn btn-primary"><a href="../actions/delete_category.php?deleteid='.$id.'"class="text-light">Delete</a></button>
                            </td>
                            </tr>';};
                            }

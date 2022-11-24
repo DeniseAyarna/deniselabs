@@ -1,6 +1,5 @@
-
 <?php
-require('../controllers/general_controller.php');
+require('../controllers/product_controller.php');
 
 //deleting data from form
 if(isset($_GET['deleteid'])){
@@ -9,7 +8,7 @@ if(isset($_GET['deleteid'])){
 
     $result = delete_all_records_ctr($id);
     if($result){
-        header("Location: ../view/form.php");
+        header("Location: ../admin/brand.php");
     } else {
         echo "fail";
     }

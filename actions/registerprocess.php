@@ -20,8 +20,10 @@ if(isset($_POST['save'])){
     if($result==TRUE){
         header("Location: ../login/login.php");
     } else {
-        echo "Data not inserted";
-    }
+        session_start();
+        $_SESSION['error']="User Already Exists";
+        header("location:../login/register.php");
+}
 }
 
 

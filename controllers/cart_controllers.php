@@ -56,5 +56,14 @@ function  add_quantity_ctr($id, $customerid){
     return $item-> add_quantity_cls($id, $customerid);
 }
 
+function  deduct_quantity_ctr($id, $customerid){
+    // Creates an instance of the general class and appends it to $item
+    $item = new cart_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item-> deduct_quantity_cls($id, $customerid);
+}
+
 //DELETE 
+
+
 ?>

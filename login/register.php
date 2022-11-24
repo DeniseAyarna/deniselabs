@@ -27,10 +27,10 @@
 					<h2 class="heading-section">Register</h2>
 				</div>
 			</div>
-			<div class="row justify-content-center">
+			<div class="row justify-content-center" >
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center">Have an account?</h3>
+		      	<h3 class="mb-4 text-center">Don't have an account?</h3>
 		      	<form action="../actions/registerprocess.php" method= "POST" class="signin-form">
 		      		<div class="form-group">
 		      			<input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="type your name" required>
@@ -67,6 +67,15 @@
 								</div>
 	            </div> -->
 	          </form>
+			  <div class="mb-4 text-center">
+			  <?php
+    session_start();
+    if(!empty($_SESSION['error'])){
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+    ?>
+					</div>
 	          <!-- <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
 	          <div class="social d-flex text-center">
 	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>

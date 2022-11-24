@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../fontawesome/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../fontawesome/fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="../css/css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/css/style.css">
     
   </head>
   <body>
@@ -80,7 +80,7 @@
                 </li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li class="active"><a href="booking.html">Book Online</a></li>
+                <li class="active"><a href="booking.php">Booking</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </nav>
@@ -119,7 +119,7 @@
 
     <div class="slide-one-item home-slider owl-carousel">
    
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(../images/images/blackgirlblackhair2.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
@@ -315,19 +315,19 @@
     </footer>
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="../js/js/jquery-3.3.1.min.js"></script>
+  <script src="../js/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/js/jquery-ui.js"></script>
+  <script src="../js/js/popper.min.js"></script>
+  <script src="../js/js/bootstrap.min.js"></script>
+  <script src="../js/js/owl.carousel.min.js"></script>
+  <script src="../js/js/jquery.stellar.min.js"></script>
+  <script src="../js/js/jquery.countdown.min.js"></script>
+  <script src="../js/js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/js/bootstrap-datepicker.min.js"></script>
+  <script src="../js/js/aos.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="../js/js/main.js"></script>
     
   </body>
 </html>

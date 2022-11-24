@@ -54,8 +54,8 @@ function add_quantity_cls($id, $customerid){
 
 }
 
-function deduct_quantity_cls($id, $customerip ,$qty){
-    return $this->db_query("update cart set qty='qty-1' where p_id='$id' and ip_add= '$customerip' and qty='$qty'");
+function deduct_quantity_cls($id, $customerid){
+    return $this->db_query("update cart set qty= qty-1 where p_id='$id' and c_id='$customerid'");
 }
 
 

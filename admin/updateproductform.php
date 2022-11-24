@@ -28,19 +28,19 @@ if(isset($_GET['updateid'])){
 
                    
                       
-                      <input type="text" class="form-control" name="product_title" id="product_title" placeholder="Product Name">
+                      <input type="text" class="form-control" name="product_title" id="product_title" placeholder="Product Name" value="<?php echo $product['product_title'] ?>">
                      
                       
-                      <input type="double" class="form-control" name="product_price" id="product_price" placeholder="GHc">
+                      <input type="double" class="form-control" name="product_price" id="product_price" placeholder="GHc"  value="<?php echo $product['product_price'] ?>">
                      
                      
-                      <input type="text" class="form-control" name="product_desc" id="product_desc" placeholder="Description">
+                      <input type="text" class="form-control" name="product_desc" id="product_desc" placeholder="Description"  value="<?php echo $product['product_desc'] ?>">
                       
                   
-                      <input type="file" class="form-control" name="product_image" id="product_image">
+                      <input type="file" class="form-control" name="product_image" id="product_image"  value="<?php echo $product['product_image'] ?>">
                      
                       
-                      <input type="text" class="form-control" name="product_keywords" id="product_keywords" placeholder="keywords">
+                      <input type="text" class="form-control" name="product_keywords" id="product_keywords" placeholder="keywords"  value="<?php echo $product['product_keywords'] ?>">
 
                       <input class="form-control" type="hidden"  name="product_id" value="<?php echo $product['product_id'] ?>">
                       
