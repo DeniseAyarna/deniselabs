@@ -322,7 +322,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
           <div class="col-lg-4">
             <div class="mb-5">
               <h3 class="footer-heading mb-4">About DiasBeauty</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+              <p>We are a beauty salon taking care of all your self-care needs</p>
             </div>
 
             
@@ -358,12 +358,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
-            <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
+           
 
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

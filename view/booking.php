@@ -46,76 +46,122 @@
 
     <header class="site-navbar py-1" role="banner">
 
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          
-          <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">DiasBeauty</a></h1>
-          </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-          <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
-
-<ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-  <li class="has-children">
-    <a href="../index.php">Home</a>
+<div class="container-fluid">
+  <div class="row align-items-center">
     
-  </li>
-  <li  class="has-children active">
-                   <a href="all_products.php">Products</a>
+    <div class="col-6 col-xl-2" data-aos="fade-down">
+      <h1 class="mb-0"><a href="../index.php" class="text-black h2 mb-0">DiasBeauty</a></h1>
+    </div>
+    <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+      <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-                 <ul class="dropdown">
-                  <?php
-                $result1= select_all_categories_ctr();
-                foreach ($result1 as $record){
-                  
-                ?>
-                
-                
-                <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
-               </a>
+        <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+          <li class="has-children">
+            <a href="../index.php">Home</a>
+            
+          </li>
+          <li  class="has-children active">
+                           <a href="all_products.php">Products</a>
+
+                         <ul class="dropdown">
+                          <?php
+                        $result1= select_all_categories_ctr();
+                        foreach ($result1 as $record){
+                          
+                        ?>
+                        
+                        
+                        <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
+                       </a>
+                        </li>
+                       <?php
+                        }
+                       ?>
+
+                        </ul>
+                       
                 </li>
-               <?php
-                }
-               ?>
+          <li class="has-children active">
+            <a href="services.php">Services</a>
+            <ul class="dropdown">
+                 <?php
+                        $result2= select_all_servicecategories_ctr();
+                        foreach ($result2 as $record){
+                          
+                ?>
+              <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
+              </li>
+                      <?php
+                        }
+                       ?>
+            
+            </ul>
+          </li>
 
-                </ul>
+          <li><a href="about.php">About</a></li>
+          
+  
+        </ul>
+      
+       
+        
+
+        
+      </nav>
+    </div>
+   
+<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                
+                <?php 
+
+  session_start();      
+if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])) {
+ 
+?>
+                <li>
+                <a href="../login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
+                </li>
+
+                <li>
+                  <a href="../login/register.php"" class="pl-3 pr-3 text-black">REGISTER</a>
+                </li>
+                
+                <?php }
+                
+                else {      
+                    $id = $_SESSION['customer_id'];
+
+                    $total1 = count_servicecart_ctr($id);
+                    $total2 = count_cart_ctr($id);
+                    $total3= $total1["count"]+$total2["count"]; ?>
+                <li>
                
-        </li>
-  <li class="has-children active">
-    <a href="services.php">Services</a>
-    <ul class="dropdown">
-         <?php
-                $result2= select_all_servicecategories_ctr();
-                foreach ($result2 as $record){
+                <a style="padding-right: -10px; ;" href="shoping-cart.php" ><span style="color:black;" class="icon-shopping-cart"><?php echo $total3;?></p></span></a><p style="position:top; padding-left:-10px;">
+               
+                </li>
+                  <li>
+                  <a href="../actions/logoutprocess.php" class="pl-3 pr-3 text-black" >LOGOUT</a>
                   
-        ?>
-      <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
-      </li>
-              <?php
-                }
-               ?>
-    
-    </ul>
-  </li>
+                </li>
 
-  <li><a href="about.html">About</a></li>
-  <li><a href="booking.html">Book Online</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
+                <li>
+                  <a href="profile.php" class="pl-3 pr-3 text-black"  >BOOKINGS</a>
+                  
+                </li>
 
+               <?php }?>
+
+                
+                
+              </ul>
+            </div>
 
 
-
-
-</nav>
           </div>
 
-          
-        </div>
-      </div>
-      
-    </header>
-
+</header>
   
 
    
@@ -144,7 +190,7 @@
 if(isset($_GET['id'])){
  $services = select_one_service_ctr($_GET['id']);
 
- session_start();
+ 
  $id=$_SESSION["customer_id"];
  $email=$_SESSION["customer_email"];
  
@@ -256,8 +302,8 @@ if(isset($_GET['id'])){
         <div class="row">
           <div class="col-lg-4">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Hairsal</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+              <h3 class="footer-heading mb-4">About DiasBeauty</h3>
+              <p>We are a beauty salon taking care of all your self-care needs</p>
             </div>
 
             
@@ -270,20 +316,13 @@ if(isset($_GET['id'])){
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Barbers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Team</a></li>
+                  <li><a href="../view/index.php">Home</a></li>
+                  <li><a href="../view/services.php">Services</a></li>
+                  <li><a href="../view/about.php">About</a></li>
+                
                 </ul>
               </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Membership</a></li>
-                </ul>
-              </div>
+              
             </div>
 
             
@@ -293,32 +332,14 @@ if(isset($_GET['id'])){
           <div class="col-lg-4 mb-5 mb-lg-0">
            
 
-            <div class="mb-5">
-              <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
-
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="submit" id="save ">Send</button>
-                  </div>
-                </div>
-              </form>
-
-            </div>
+            
 
           </div>
           
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
-            <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
+           
 
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

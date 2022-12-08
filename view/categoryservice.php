@@ -93,7 +93,7 @@
   $id = $_SESSION['customer_id'];
    
       
-   
+    
       
         
       
@@ -276,18 +276,18 @@ if ($service!=false){
        
           <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5" name= "single_product" style="background-color:white ;">
           
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
-            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-            <div class="container" style="background-color:transparent;">
-            <a href="./booking.php?id=<?php echo $service[$i]['service_id']?>"</a><img src="<?php echo $service[$i]['service_image'];?>" alt="Image" class="img-fluid">
-              
+            <div class="h-100 bg-light site-block-feature-7" >
+            <div class="container" style="background-color:white ;">
+              <img src="<?php echo $service[$i]['service_image'];?>" alt="Image" class="img-fluid">
+              <button class="btn"><a href="./booking.php?id=<?php echo $service[$i]['service_id'];?>"</a><i class="icomoon icon-eye" style="color:transparent ;"></i></button> 
               </div>
-              <span class="icon flaticon-razor display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4"><?php echo $service[$i]['service_title'];?></h3>
-              <p><?php echo $service[$i]['service_desc'];?></p>
-              <p><strong class="font-weight-bold text-primary">GHC<?php echo $servuce[$i]['service_price'];?>.00</strong></p>
+              
+              <div class="p-4 p-lg-5" style="background-color:white;">
+                <h3 class="text-black h4"><?php echo $service[$i]['service_title'];?></h3>
+                <p><strong class="font-weight-bold text-primary" > GHC <?php echo $service[$i]['service_price'];?>.00</strong>
+                 <a href="booking.php?id=<?php echo $service[$i]['service_id']?>" name="addtocart "class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>   </p>
+              </div>
             </div>
-          </div>
           </div>
           <?php
           $i++;     
@@ -333,8 +333,8 @@ if ($service!=false){
         <div class="row">
           <div class="col-lg-4">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Hairsal</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+              <h3 class="footer-heading mb-4">About DiasBeauty</h3>
+              <p>We are a beauty salon taking care of all your self-care needs</p>
             </div>
 
             
@@ -347,20 +347,13 @@ if ($service!=false){
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Barbers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Team</a></li>
+                  <li><a href="../view/index.php">Home</a></li>
+                  <li><a href="../view/services.php">Services</a></li>
+                  <li><a href="../view/about.php">About</a></li>
+                
                 </ul>
               </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Membership</a></li>
-                </ul>
-              </div>
+              
             </div>
 
             
@@ -370,32 +363,14 @@ if ($service!=false){
           <div class="col-lg-4 mb-5 mb-lg-0">
            
 
-            <div class="mb-5">
-              <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
-
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
-                  </div>
-                </div>
-              </form>
-
-            </div>
+            
 
           </div>
           
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
-            <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
+           
 
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
