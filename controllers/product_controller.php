@@ -123,4 +123,132 @@ function select_by_category_ctr($cat){
     return $item->select_by_category_cls($cat);
 }
 
+
+//SERVICE
+function insert_servicecategory_ctr($a){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling insert record method in the general class and returns true or false
+    return $item->insert_servicecategory_cls($a);
+}
+function insert_service_ctr($a,$b,$c,$d,$e,$f){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling insert record method in the general class and returns true or false
+    return $item->insert_service_cls($a,$b,$c,$d,$e,$f);
+}
+
+
+
+//--SELECT--//
+
+function select_all_servicecategories_ctr(){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_all_servicecategories_cls();
+}
+function select_all_services_ctr(){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_all_services_cls();
+}
+
+
+
+
+
+//--UPDATE--//
+
+function update_all_servicecategories_ctr($id,$sname){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->update_all_servicecategories_cls($id,$sname);
+}
+function update_all_services_ctr($id,$servicecat,$servicetitle,$serviceprice,$servicedesc,$fileDestinaton,$servicekeyword){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->update_all_services_cls($id,$servicecat,$servicetitle,$serviceprice,$servicedesc,$fileDestinaton,$servicekeyword);
+}
+
+//--DELETE--//
+
+function delete_all_servicecategories_ctr($id){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->delete_all_servicecategories_cls($id);
+}
+function delete_all_services_ctr($id){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->delete_all_services_cls($id);
+}
+
+//--SELECTONE--//
+
+
+function select_one_servicecategory_ctr($id){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_one_servicecategory_cls($id);
+ }
+    function select_one_service_ctr($id){
+        // Creates an instance of the general class and appends it to $item
+        $item = new product_class();
+        // Calling select all records method in the general class and returns true or false
+        return $item->select_one_service_cls($id);
+ }
+
+ function list_all_services_ctr($title){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->list_all_services_cls($title);
+}
+
+function select_by_servicecategory_ctr($scat){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_by_servicecategory_cls($scat);
+}
+function count_servicecart_ctr($id){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item-> count_servicecart_cls($id);
+}
+
+function count_cart_ctr($id){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item-> count_cart_cls($id);
+}
+
+function  show_userbookings_ctr($id){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->  show_userbookings_cls($id);
+}
+function  show_bookings_ctr(){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->  show_bookings_cls();
+}
+
+function  show_orders_ctr(){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->  show_orders_cls();
+}
 ?>

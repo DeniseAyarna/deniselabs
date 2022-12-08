@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
     $qty=3;
 
   
-    $result = delete_from_cart_ctr($id);
+    $result = delete_from_servicecart_ctr($id);
 
     if($result===TRUE){
         header("Location: ../view/shoping-cart.php?error=Deleted Successfully");

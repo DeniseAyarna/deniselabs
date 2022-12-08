@@ -24,8 +24,8 @@
   </head>
   <body>
   <?php 
-        require('../controllers/product_controller.php');
-        $result = select_all_records_ctr();
+       require('../controllers/product_controller.php');
+        
         
     ?>
 <?php
@@ -76,7 +76,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">ADD BRAND</span>
+              <span class="menu-title">PRODUCT BRAND</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -84,7 +84,15 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
-              <span class="menu-title">ADD CATEGORIES</span>
+              <span class="menu-title">PRODUCT CATEGORY</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="servicecategory.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">SERVICE CATEGORY</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -92,7 +100,15 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">ADD PRODUCTS</span>
+              <span class="menu-title">ADD PRODUCT</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="service.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">ADD SERVICE</span>
             </a>
           </li>
           
@@ -114,7 +130,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
             <ul class="navbar-nav w-100">
               <li class="nav-item w-100">
                 <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input type="text" class="form-control" placeholder="Search products">
+                  <input type="text" class="form-control" placeholder="Search services">
                 </form>
               </li>
             </ul>
@@ -213,52 +229,114 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Brands</h4>
+                   
                     <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Brand</h4>
                     
-                    <form class="form-inline" action ="../actions/add_brand.php" method= "POST">
-                      <label class="sr-only" for="inlineFormInputName2">Name</label>
-                      
-                      <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                    
+                    <form class="form-inline" action ="../actions/add_service.php" method= "POST" enctype="multipart/form-data">
                       <div class="input-group mb-2 mr-sm-2">
+
                         
-                        <input type="text" class="form-control" name="bname" id="bnmae" placeholder="Brand name">
-                      </div>
+
+                   
                       
-                      <button type="submit" name="save" class="btn btn-primary mb-2">Add</button>
-                    </form>
+                      <input type="text" class="form-control" name="service_title" id="service_title" placeholder="Service Name">
+                     
+                      
+                      <input type="double" class="form-control" name="service_price" id="service_price" placeholder="GHc">
+                     
+                     
+                      <input type="text" class="form-control" name="service_desc" id="service_desc" placeholder="Description">
+                      
+                  
+                      <input type="file" class="form-control" name="service_image" id="service_image">
+                     
+                      
+                      <input type="text" class="form-control" name="service_keywords" id="service_keywords" placeholder="keywords">
+
+
+                      
+                     
+                      
+                        <!-- <label for="categories">category</label> -->
+                        <select name= "service_cat" aria-placeholder="category" class="form-control" >
+                        <option selected>select category</option>
+                        <?php
+                        $result = select_all_servicecategories_ctr();
+                        $i=0;
+                        while($i<count($result)){
+                        ?>
+                         <option value ="<?php echo $result[$i]['scat_id'];?>"> <?php echo $result[$i]['scat_name'];?> </option>
+                         <?php
+                         $i++;  
+                        }
+                        ?>
+                        </select>
+                        </div>
+                      <button type="submit" name="save" class="btn btn-primary mb-2">Add service</button>
+                      </form>
                   </div>
                 </div>
                     </p>
                     <div class="table-responsive">
+
                       <table class="table table-dark">
                         <thead>
                         
 
                           <tr>
                             <th> # </th>
-                            <th> Brandname </th>
+                            <th> service Name </th>
+                            <th> Price</th>
+                            <th> Description </th>
+                            <th> Image </th>
+                            <th> keywords </th>
+                            <th> Category </th>
+
+
                             
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <?php 
-   
+                            $result = select_all_services_ctr();
+                        
+
                             foreach($result as $record ){
                            {
-                            $id = $record['brand_id'];
-                            $bname = $record['brand_name'];
+                            $id = $record['service_id'];
+                            $servicetitle = $record['service_title'];
+                            $serviceprice = $record['service_price'];
+                            $servicedesc = $record['service_desc'];
+                            $fileDestination= $record['service_image'];
+                            $servicekey = $record['service_keywords'];
+                         
+                            $servicecat = $record['service_cat'];
+                            
+                            
+                            
+                           
+                            
+                           
+                            
+                            
+
           
                             echo '<tr><th scope="row">'
                             .$id.' </th>
-                           <td>'.$bname.'</td>
+                            <td>'.$servicetitle.'</td>
+                            <td>'.$serviceprice.'</td>
+                            <td>'.$servicedesc.'</td>
+                            <td>'.$fileDestination.'</td>
+                           <td>'.$servicekey.'</td>
+                           
+                           <td>'.$servicecat.'</td>
 
                            <td>
-                           <button class="btn btn-primary"><a href="../admin/updatebrandform.php?updateid='.$id.'" class="text-light">Update</a></button>
-                           <button class="btn btn-primary"><a href="../actions/delete_brand.php?deleteid='.$id.'"class="text-light">Delete</a></button>
+                           <button class="btn btn-primary"><a href="../admin/updateserviceform.php?updateid='.$id.'" class="text-light">Update</a></button>
+                           <button class="btn btn-primary"><a href="../actions/delete_service.php?deleteid='.$id.'"class="text-light">Delete</a></button>
                            </td>
                            </tr>';};
                            }

@@ -50,12 +50,12 @@ $id = $_SESSION['customer_id'];
             alert(message);
 
             $.ajax({
-    url: '../actions/process_paystack.php'+ response.reference,
+    url: '../actions/process_paystack.php?reference='+ response.reference,
     method: 'get',
     success: function (response) {
       // the transaction status is in response.data.status
-      alert(response);
-    },
+     window.location.href='index.php';
+    }
   });
 
           }

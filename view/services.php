@@ -27,7 +27,56 @@
     
   </head>
   <body>
+  <?php 
   
+  session_start();
+  if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
+    header('location:../login/login.php');
+  }
+  
+  
+  
+  $id = $_SESSION['customer_id'];
+   
+      
+       require('../controllers/product_controller.php');
+      
+        
+      
+    ?>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+
+
+
+    </head>
+  <body>
+  <?php 
+  
+
+  if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
+    header('location:../login/login.php');
+  }
+  
+  
+  
+  $id = $_SESSION['customer_id'];
+   
+      
+     
+      
+        
+      
+    ?>
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -58,19 +107,47 @@
             <a href="../index.php">Home</a>
             
           </li>
+          <li  class="has-children active">
+                           <a href="all_products.php">Products</a>
+
+                         <ul class="dropdown">
+                          <?php
+                        $result1= select_all_categories_ctr();
+                        foreach ($result1 as $record){
+                          
+                        ?>
+                        
+                        
+                        <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
+                       </a>
+                        </li>
+                       <?php
+                        }
+                       ?>
+
+                        </ul>
+                       
+                </li>
           <li class="has-children active">
-            <a href="all_products.php">Products</a>
+            <a href="services.php">Services</a>
             <ul class="dropdown">
-              <li><a href="#">HAIR TOOLS</a></li>
-              <li><a href="#">PRESS ON NAILS</a></li>
-              <li><a href="#">HAIR EXTENSIONS</a></li>
+                 <?php
+                        $result2= select_all_servicecategories_ctr();
+                        foreach ($result2 as $record){
+                          
+                ?>
+              <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
+              </li>
+                      <?php
+                        }
+                       ?>
             
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="booking.html">Book Online</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <li><a href="about.php">About</a></li>
+          
+  
         </ul>
       
        
@@ -80,56 +157,59 @@
       </nav>
     </div>
    
-    <div class="dropdown">
-<button  style="background-color:transparent; border:0px; padding-right: 30px;" class="button" border="none;" color="blue;" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icomoon icon-search"></i>
+<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                
+                <?php 
 
-</button>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<form action="/action_page.php" class="d-flex justify-content-between">
+        
+if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])) {
+ 
+?>
+                <li>
+                <a href="../login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
+                </li>
 
-<input type="text" placeholder="Search.." name="search"   >
+                <li>
+                  <a href="../login/register.php"" class="pl-3 pr-3 text-black">REGISTER</a>
+                </li>
+                
+                <?php }
+                
+                else {      
+                    $id = $_SESSION['customer_id'];
 
-</form>
+                    $total1 = count_servicecart_ctr($id);
+                    $total2 = count_cart_ctr($id);
+                    $total3= $total1["count"]+$total2["count"]; ?>
+                <li>
+               
+                <a style="padding-right: -10px; ;" href="shoping-cart.php" ><span style="color:black;" class="icon-shopping-cart"><?php echo $total3;?></p></span></a><p style="position:top; padding-left:-10px;">
+               
+                </li>
+                  <li>
+                  <a href="../actions/logoutprocess.php" class="pl-3 pr-3 text-black" >LOGOUT</a>
+                  
+                </li>
 
-</div>
-</div>
+                <li>
+                  <a href="profile.php" class="pl-3 pr-3 text-black"  >BOOKINGS</a>
+                  
+                </li>
 
-<a href="shoping-cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
+               <?php }?>
 
-    <!-- <div class="search-container" >
-<form action="/action_page.php" class="d-flex justify-content-between">
+                
+                
+              </ul>
+            </div>
 
-<input type="text" placeholder="Search.." name="search"   >
 
-<button type="submit"><i class="icomoon icon-search"></i></button>
-</form>
-<a href="shopping_cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
-</div> -->
-          
-
-    <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
-      <div class="d-none d-xl-inline-block">
-        <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-      
-         
-
-      <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-      
-    </div>
-
-  </div>
-</div>
+          </div>
 
 </header>
-
-
-  
-
-
-
-   
-
-    <div class="slide-one-item home-slider owl-carousel">
+<div class="slide-one-item home-slider owl-carousel">
    
       <div class="site-blocks-cover inner-page-cover" style="background-image: url(../images/images/blackgirlhair.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -146,76 +226,63 @@
 
     </div>
 
+  
+
+
+
+   
+
+    
+
 
 
     <div class="site-section">
       <div class="container">
         
         <div class="row">
+        <?php
+                        $result1= select_all_services_ctr();
+                        $i=0;
+                        while($i<count($result1)){
+                    foreach ($result1 as $record);      
+
+                             
+                            
+                        ?>
           <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
             <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
+            <div class="container" style="background-color:transparent;">
+            <a href="./booking.php?id=<?php echo $result1[$i]['service_id']?>"</a><img src="<?php echo $result1[$i]['service_image'];?>" alt="Image" class="img-fluid">
+              
+              </div>
               <span class="icon flaticon-razor display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Barber Razor</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$29</strong></p>
+              <h3 class="text-black h4"><?php echo $result1[$i]['service_title'];?></h3>
+              <p><?php echo $result1[$i]['service_desc'];?></p>
+              <p><strong class="font-weight-bold text-primary">GHC<?php echo $result1[$i]['service_price'];?>.00</strong></p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
-            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-              <span class="icon flaticon-location-pin display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Location Pin</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$46</strong></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
-            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-              <span class="icon flaticon-shave display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Barber Shave</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$24</strong></p>
-            </div>
+          <?php
+              $i++; 
+                            }
+              ?>
+         
           </div>
 
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
-            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-              <span class="icon flaticon-barber display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Barber Seat</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$40</strong></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
-            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-              <span class="icon flaticon-hair-dryer display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Hair Dryer</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$35</strong></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
-            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-              <span class="icon flaticon-spray display-3 text-primary mb-4 d-block"></span>
-              <h3 class="text-black h4">Barber Spray</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-              <p><strong class="font-weight-bold text-primary">$15</strong></p>
-            </div>
-          </div>
 
         </div>
       </div>
-    </div>
+  
 
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5">
-            <img src="images/person_1.jpg" alt="Image" class="img-md-fluid">
+            <img src="../images/images/junglebraids.jpg" alt="Image" class="img-md-fluid">
           </div>
           <div class="col-lg-6 bg-white p-md-5 align-self-center">
             <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">New hairstyle!</h2>
-            <p class="text-black lead"><em>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</em></p>
-            <p class="lead text-black">&mdash; <em>Stellla Martin</em></p>
+            <p class="text-black lead"><em>&ldquo;Heard of Jungle braids? These braids are so attractive although they may seem messy in first site but trust us when i say you will indeed ove them&rdquo;</em></p>
+            <p class="lead text-black">&mdash; <em>DiasBeauty</em></p>
           </div>
         </div>
       </div>
@@ -225,7 +292,7 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-md-12">
-            <h2 class="mb-4 text-black">We want your hair to look fabulous</h2>
+            <h2 class="mb-4 text-black">We want you to look fabulous</h2>
             <p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5 text-white">Visit Our Salon Now</a></p>
           </div>
         </div>
@@ -238,7 +305,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Hairsal</h3>
+              <h3 class="footer-heading mb-4">About DiasBeauty</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
             </div>
 
@@ -252,18 +319,16 @@
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Barbers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Team</a></li>
+                  <li><a href="../index.php">Home</a></li>
+                 
                 </ul>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
                   <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
+                 
                   <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Membership</a></li>
+                 
                 </ul>
               </div>
             </div>
@@ -293,23 +358,7 @@
           </div>
           
         </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
-
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-          
-        </div>
+       
       </div>
     </footer>
   </div>

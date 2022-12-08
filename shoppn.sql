@@ -59,6 +59,18 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `servicecategories` (
+  `scat_id` int(11) NOT NULL,
+  `scat_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -132,6 +144,21 @@ CREATE TABLE `products` (
   `product_keywords` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `service_id` int(11) NOT NULL,
+  `service_cat` int(11) NOT NULL,
+  `service_title` varchar(200) NOT NULL,
+  `service_price` double NOT NULL,
+  `service_desc` varchar(500) DEFAULT NULL,
+  `service_image` varchar(100) DEFAULT NULL,
+  `service_keywords` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Indexes for dumped tables
 --
@@ -154,6 +181,13 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
+
+  --
+-- Indexes for table `servicecategories`
+--
+ALTER TABLE `servicecategories`
+  ADD PRIMARY KEY (`scat_id`);
+
 
 --
 -- Indexes for table `customer`
@@ -192,6 +226,13 @@ ALTER TABLE `products`
   ADD KEY `product_cat` (`product_cat`),
   ADD KEY `product_brand` (`product_brand`);
 
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`service_id`),
+  ADD KEY `service_cat` (`service_cat`);
+  
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -233,6 +274,11 @@ ALTER TABLE `products`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- Constraints for dumped tables
 --
 
@@ -269,6 +315,13 @@ ALTER TABLE `payment`
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`product_cat`) REFERENCES `categories` (`cat_id`),
   ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`product_brand`) REFERENCES `brands` (`brand_id`);
+
+  --
+-- Constraints for table `services`
+--
+ALTER TABLE `services`
+  ADD CONSTRAINT `services_ibfk_1` FOREIGN KEY (`servies_cat`) REFERENCES `servicecategories` (`scat_id`),
+ 
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

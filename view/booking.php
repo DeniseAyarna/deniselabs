@@ -27,7 +27,9 @@
     
   </head>
   <body>
-  
+  <?php 
+       require('../controllers/product_controller.php');    
+    ?>
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -48,66 +50,67 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Hairsal</a></h1>
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">DiasBeauty</a></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+          <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="has-children">
-                  <a href="index.html">Home</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+<ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+  <li class="has-children">
+    <a href="../index.php">Home</a>
+    
+  </li>
+  <li  class="has-children active">
+                   <a href="all_products.php">Products</a>
+
+                 <ul class="dropdown">
+                  <?php
+                $result1= select_all_categories_ctr();
+                foreach ($result1 as $record){
+                  
+                ?>
+                
+                
+                <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
+               </a>
                 </li>
-                <li class="has-children">
-                  <a href="haircut.html">Haircut</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                  </ul>
-                </li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li class="active"><a href="booking.php">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </nav>
+               <?php
+                }
+               ?>
+
+                </ul>
+               
+        </li>
+  <li class="has-children active">
+    <a href="services.php">Services</a>
+    <ul class="dropdown">
+         <?php
+                $result2= select_all_servicecategories_ctr();
+                foreach ($result2 as $record){
+                  
+        ?>
+      <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
+      </li>
+              <?php
+                }
+               ?>
+    
+    </ul>
+  </li>
+
+  <li><a href="about.html">About</a></li>
+  <li><a href="booking.html">Book Online</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+
+
+
+</nav>
           </div>
 
-          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
-            <div class="d-none d-xl-inline-block">
-              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                <li>
-                  <a href="#" class="pl-0 pr-3 text-black"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-youtube-play"></span></a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-          </div>
-
+          
         </div>
       </div>
       
@@ -135,7 +138,22 @@
     </div>
 
 
+    <?php
 
+
+if(isset($_GET['id'])){
+ $services = select_one_service_ctr($_GET['id']);
+
+ session_start();
+ $id=$_SESSION["customer_id"];
+ $email=$_SESSION["customer_email"];
+ 
+ $name=$_SESSION['customer_name'];
+
+}
+
+
+   ?>
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -143,77 +161,76 @@
 
             
 
-            <form action="#" class="p-5 bg-white">
+            <form action="../actions/add_booking.php" method="POST" class="p-5 bg-white">
               <h2 class="mb-4 site-section-heading">Book Now</h2>
 
               <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control" placeholder="First Name">
+              <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">Name</label>
+                  <input type="text" id="name" name="name" class="form-control" value="<?php echo $name?>" placeholder="First Name">
                 </div>
                 <div class="col-md-6">
-                  <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control" placeholder="Last Name">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" name="email" class="form-control"  value="<?php echo $email?>" placeholder="Email">
                 </div>
+
+                
               </div>
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="date">Date</label> 
-                  <input type="text" id="date" class="form-control datepicker px-2" placeholder="Date of visit">
+                  <input type="text" id="date" name="date" class="form-control datepicker px-2" placeholder="Date of visit" required>
                 </div>
-                <div class="col-md-6">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control" placeholder="Email">
-                </div>
+
+               
               </div>
+              
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="treatment">Service You Want</label> 
-                  <select name="treatment" id="treatment" class="form-control">
-                    <option value="">Hair Cut</option>
-                    <option value="">Hair Coloring</option>
-                    <option value="">Shave</option>
-                    <option value="">Hair Conditioning</option>
+                  <select name="treatment" id="treatment" class="form-control" >
+                  
+                    <option value="<?php echo $services['service_title'] ?>"><?php echo $services['service_title'] ?></option>
+                    
                   </select>
+
+                  <div class="col-md-12">
+                  
+                  
+                  
+                  <input type="hidden" value="<?php echo $services['service_id'] ?>" id="service" name="service" class="btn btn-primary py-2 px-4 text-white">
+                    
+                 
                 </div>
               </div>
+              </div>
+             
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="note">Notes</label> 
-                  <textarea name="note" id="note" cols="30" rows="5" class="form-control" placeholder="Write your notes or questions here..."></textarea>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Send" class="btn btn-primary py-2 px-4 text-white">
+                  
+                  <input type="submit" value="Send" id="save" name="save" class="btn btn-primary py-2 px-4 text-white">
                 </div>
               </div>
 
   
             </form>
+
           </div>
+
           <div class="col-md-5">
             
             <div class="p-4 mb-3 bg-white">
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
-
-              <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
-
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
-
+            <img src="<?php echo $services['service_image'] ?>" alt="Image" width="100%">
             </div>
             
             <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">More Info</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur? Fugiat quaerat eos qui, libero neque sed nulla.</p>
-              <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Get In Touch</a></p>
+              <h3 class="h5 text-black mb-3"><?php echo $services['service_title'] ?></h3>
+              <p><?php echo $services['service_desc'] ?></p>
+             
+              <p class="btn btn-primary px-4 py-2 text-white">GHC <?php echo $services['service_price'] ?>.00</a></p>
             </div>
 
           </div>
@@ -284,7 +301,7 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
                   <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                    <button class="btn btn-primary text-white" type="submit" id="save ">Send</button>
                   </div>
                 </div>
               </form>

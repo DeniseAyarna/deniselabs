@@ -19,22 +19,27 @@ if(isset($_GET['id'])){
     $id=$_GET['id'];
     $customerid=$_SESSION['customer_id'];
     $customerip=$_SERVER['REMOTE_ADDR'];
-    $qty=3;
+    $qty=1;
 
-  
-    $result = delete_from_cart_ctr($id);
+   }
+
+   $check = select_service_cart_ctr($id);
+
+   if($check['p_id']!=$id){
+    $result = insert_into_servicecart_ctr($id,$customerip,$customerid,$qty);
 
     if($result===TRUE){
-        header("Location: ../view/shoping-cart.php?error=Deleted Successfully");
+        
+        echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+        
+        header("Location: ../view/services.php?error=Added Successfully");
     } else {
         echo "fail";
     }
    }else{
-    header("Location: ../view/shoping-cart.php?error=Unable to delete");
+    header("Location: ../view/services.php?error=The Item is already in your cart");
    }
 
    
-
-
 
 ?>

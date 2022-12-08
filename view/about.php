@@ -6,28 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../fontawesome/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../fontawesome/fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="../css/css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/css/style.css">
     
   </head>
   <body>
+  <?php 
+      
+      require('../controllers/product_controller.php');
+     
+       
+    
   
+      
+       
+          
+           
+          
+            
+          
+        ?>
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -48,40 +62,58 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Hairsal</a></h1>
+            <h1 class="mb-0"><a href="index.php" class="text-black h2 mb-0">Dias Beauty</a></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="has-children">
-                  <a href="index.html">Home</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                <li class="has-children active">
+                  <a href="../view/index.php">Home</a>
                 </li>
-                <li class="has-children">
-                  <a href="haircut.html">Haircut</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                  </ul>
+
+
+                <li  class="has-children active">
+                           <a href="all_products.php">Products</a>
+
+                         <ul class="dropdown">
+                          <?php
+                        $result1= select_all_categories_ctr();
+                        foreach ($result1 as $record){
+                          
+                        ?>
+                        
+                        
+                        <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
+                       </a>
+                        </li>
+                       <?php
+                        }
+                       ?>
+
+                        </ul>
+                       
                 </li>
-                <li><a href="services.html">Services</a></li>
-                <li class="active"><a href="about.html">About</a></li>
-                <li><a href="booking.html">Book Online</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="has-children active">
+            <a href="services.php">Services</a>
+            <ul class="dropdown">
+                 <?php
+                        $result2= select_all_servicecategories_ctr();
+                        foreach ($result2 as $record){
+                          
+                ?>
+              <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
+              </li>
+                      <?php
+                        }
+                       ?>
+            
+            </ul>
+          </li>
+        
+                <li><a href="about.php">About</a></li>
+                
+                
               </ul>
             </nav>
           </div>
@@ -89,22 +121,51 @@
           <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                
+                <?php 
+
+          session_start()  ; 
+if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])) {
+ 
+?>
                 <li>
-                  <a href="#" class="pl-0 pr-3 text-black"><span class="icon-facebook"></span></a>
+                <a href="../login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
                 </li>
+
                 <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
+                  <a href="../login/register.php"" class="pl-3 pr-3 text-black">REGISTER</a>
                 </li>
+                
+                <?php }
+                
+                else {      
+                    $id = $_SESSION['customer_id'];
+
+                    $total1 = count_servicecart_ctr($id);
+                    $total2 = count_cart_ctr($id);
+                    $total3= $total1["count"]+$total2["count"]; ?>
                 <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
+               
+                <a  href="shoping-cart.php" ><span style="color:black;"  class="icon-shopping-cart"> <p><?php echo $total3;?></p></span></a>
+               
                 </li>
+                  <li>
+                  <a href="../actions/logoutprocess.php" class="pl-3 pr-3 text-black" style="margin-left:20px ;" >LOGOUT</a>
+                  
+                </li>
+
                 <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-youtube-play"></span></a>
+                  <a href="profile.php" class="pl-3 pr-3 text-black" style="margin-left:20px ;" >BOOKINGS</a>
+                  
                 </li>
+
+               <?php }?>
+
+                
+                
               </ul>
             </div>
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
           </div>
 
@@ -119,7 +180,7 @@
 
     <div class="slide-one-item home-slider owl-carousel">
    
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(../images/images/download.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
@@ -140,40 +201,23 @@
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7">
-            <h2 class="site-section-heading font-weight-light text-black text-center">Our Barbers</h2>
+            <h2 class="site-section-heading font-weight-light text-black text-center">Our Founders</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up">
-            <img src="images/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-            <h2 class="text-black font-weight-light mb-4">Jean Smith</h2>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
-            <p>
-              <a href="#" class="pl-0 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
-            </p>
+            <img src="../images/images/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+            <h2 class="text-black font-weight-light mb-4">Denise Imoru Ayarna</h2>
+            <p class="mb-4">CEO</p>
+           
           </div>
           <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up">
-            <img src="images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-            <h2 class="text-black font-weight-light mb-4">Claire Smith</h2>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
-            <p>
-              <a href="#" class="pl-0 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
-            </p>
+            <img src="../images/images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+            <h2 class="text-black font-weight-light mb-4">Esmee Imoru Ayarna</h2>
+            <p class="mb-4">C00</p>
+           
           </div>
-          <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up">
-            <img src="images/person_4.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-            <h2 class="text-black font-weight-light mb-4">John Smith</h2>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
-            <p>
-              <a href="#" class="pl-0 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
-            </p>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -182,12 +226,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5">
-            <img src="images/person_1.jpg" alt="Image" class="img-md-fluid">
+            <img src="../images/images/person_1.jpg" alt="Image" class="img-md-fluid">
           </div>
           <div class="col-lg-6 bg-white p-md-5 align-self-center">
-            <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">New hairstyle!</h2>
-            <p class="text-black lead"><em>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</em></p>
-            <p class="lead text-black">&mdash; <em>Stellla Martin</em></p>
+            <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">What we do?!</h2>
+            <p class="text-black lead"><em>&ldquo;We are a beauty salon in tema Ghana . We aim to be your one stop studio for all your beauty needs, hence the motto : look stunning!&rdquo;</em></p>
           </div>
         </div>
       </div>
@@ -287,19 +330,19 @@
     </footer>
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="../js/js/jquery-3.3.1.min.js"></script>
+  <script src="../js/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/js/jquery-ui.js"></script>
+  <script src="../js/js/popper.min.js"></script>
+  <script src="../js/js/bootstrap.min.js"></script>
+  <script src="../js/js/owl.carousel.min.js"></script>
+  <script src="../js/js/jquery.stellar.min.js"></script>
+  <script src="../js/js/jquery.countdown.min.js"></script>
+  <script src="../js/js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/js/bootstrap-datepicker.min.js"></script>
+  <script src="../js/js/aos.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="../js/js/main.js"></script>
     
   </body>
 </html>

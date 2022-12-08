@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>HairSal &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="../css/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="../fontawesome/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../fonteawesome/fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
@@ -24,42 +24,55 @@
     <link rel="stylesheet" href="../css/css/aos.css">
 
     <link rel="stylesheet" href="../css/css/style.css">
-
-    <style>
-
-
-.container img {
-  width: 100%;
-  height: auto;
-  
-}
-
-.container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: transparent;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.container .btn:hover {
-  background-color: black;
-}
-    </style>
+    
   </head>
   <body>
   <?php 
+  
+  session_start();
+  if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
+    header('location:../login/login.php');
+  }
+  
+  
+  
+  $id = $_SESSION['customer_id'];
+   
+      
        require('../controllers/product_controller.php');
+      
         
       
+    ?>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+
+
+
+    </head>
+  <body>
+  <?php 
+  
+ 
+  if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
+    header('location:../login/login.php');
+  }
+  
+  
+  
+  $id = $_SESSION['customer_id'];
+   
+      
+     
         
       
     ?>
@@ -79,132 +92,131 @@
 
     <header class="site-navbar py-1" role="banner">
 
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          
-          <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="../index.php" class="text-black h2 mb-0">DiasBeauty</a></h1>
-          </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
-
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="has-children">
-                  <a href="../index.php">Home</a>
-                  
-                </li>
-                <?php
-                        $result1= select_all_products_ctr();
-                        
-
-                             
-                            
-                        ?>
-                <li class="has-children active">
-                  <a href="all_products.php">Products</a>
-                  <ul class="dropdown">
-                    <li><a href="categoryproduct.php?id=<?php echo $result1['product_cat']?>">HAIR TOOLS</a></li>
-                    <li><a href="#">PRESS ON NAILS</a></li>
-                    <li><a href="#">HAIR EXTENSIONS</a></li>
-                  
-                  </ul>
-                </li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="booking.php">Book Online</a></li>
-                <li><a href="contact.php">Contact</a></li>
-              </ul>
-            
-             
-              
-
-              
-            </nav>
-          </div>
-          <div class="slide-one-item home-slider owl-carousel">
-      
-      <div class="site-blocks-cover" style="background-image: url(images/images/blackgirlhair.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center text-center">
-
-            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h5 class="text-white font-weight-light text-uppercase">Welcome to DiasBeauty Studio</h5>
-              <h2 class="text-white font-weight-light mb-2 display-1">Beauty Salon Experts</h2>
-
-              <p><a href="./view/services.php" class="btn btn-black py-3 px-5">Book Now!</a></p>
-            </div>
-          </div>
-        </div>
-      </div>  
-
-      <div class="site-blocks-cover" style="background-image: url(images/images/blackgirlblackhair.webp);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center text-center">
-
-            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h2 class="text-white font-weight-light mb-2 display-1">Beautiful Hair, Healthy You!</h2>
-
-              <p><a href="./view/services.php" class="btn btn-black py-3 px-5">Book Now!</a></p>
-            </div>
-          </div>
-        </div>
-      </div>  
-
+<div class="container-fluid">
+  <div class="row align-items-center">
+    
+    <div class="col-6 col-xl-2" data-aos="fade-down">
+      <h1 class="mb-0"><a href="../index.php" class="text-black h2 mb-0">DiasBeauty</a></h1>
     </div>
-          <div class="dropdown">
-  <button  style="background-color:transparent; border:0px; padding-right: 30px;" class="button" border="none;" color="blue;" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icomoon icon-search"></i>
-   
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  <form action="/action_page.php" class="d-flex justify-content-between">
-    
-    <input type="text" placeholder="Search.." name="search"   >
+    <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+      <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-</form>
-    
-  </div>
-</div>
+        <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+          <li class="has-children">
+            <a href="../index.php">Home</a>
+            
+          </li>
+          <li  class="has-children active">
+                           <a href="all_products.php">Products</a>
 
-<a href="shoping-cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
+                         <ul class="dropdown">
+                          <?php
+                        $result1= select_all_categories_ctr();
+                        foreach ($result1 as $record){
+                          
+                        ?>
+                        
+                        
+                        <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
+                       </a>
+                        </li>
+                       <?php
+                        }
+                       ?>
 
-          <!-- <div class="search-container" >
-    <form action="/action_page.php" class="d-flex justify-content-between">
-    
-      <input type="text" placeholder="Search.." name="search"   >
+                        </ul>
+                       
+                </li>
+          <li class="has-children active">
+            <a href="services.php">Services</a>
+            <ul class="dropdown">
+                 <?php
+                        $result2= select_all_servicecategories_ctr();
+                        foreach ($result2 as $record){
+                          
+                ?>
+              <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
+              </li>
+                      <?php
+                        }
+                       ?>
+            
+            </ul>
+          </li>
+
+          <li><a href="about.php">About</a></li>
+          
+  
+        </ul>
       
-      <button type="submit"><i class="icomoon icon-search"></i></button>
-      </form>
-      <a href="shopping_cart.php" class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>
-  </div> -->
-                
+       
+        
 
-          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+        
+      </nav>
+    </div>
+   
+<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-            
-               
+                
+                <?php 
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-            
+        
+if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])) {
+ 
+?>
+                <li>
+                <a href="../login/login.php" class="pl-3 pr-3 text-black">LOGIN</a>
+                </li>
+
+                <li>
+                  <a href="../login/register.php"" class="pl-3 pr-3 text-black">REGISTER</a>
+                </li>
+                
+                <?php }
+                
+                else {      
+                    $id = $_SESSION['customer_id'];
+
+                    $total1 = count_servicecart_ctr($id);
+                    $total2 = count_cart_ctr($id);
+                    $total3= $total1["count"]+$total2["count"]; ?>
+                <li>
+               
+                <a style="padding-right: -10px; ;" href="shoping-cart.php" ><span style="color:black;" class="icon-shopping-cart"><?php echo $total3;?></p></span></a><p style="position:top; padding-left:-10px;">
+               
+                </li>
+                  <li>
+                  <a href="../actions/logoutprocess.php" class="pl-3 pr-3 text-black" >LOGOUT</a>
+                  
+                </li>
+
+                <li>
+                  <a href="profile.php" class="pl-3 pr-3 text-black"  >BOOKINGS</a>
+                  
+                </li>
+
+               <?php }?>
+
+                
+                
+              </ul>
+            </div>
+
+
           </div>
 
-        </div>
-      </div>
-      
-    </header>
+</header>
 
-  
-    
+<div class="slide-one-item home-slider owl-carousel">
    
-
-    <div class="slide-one-item home-slider owl-carousel">
-   
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(../images/images/blackgirlhair.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h2 class="text-white font-weight-light mb-4 display-1 line-height-1">Hair Style &amp; Prices</h2>
+              <h2 class="text-white font-weight-light mb-2 display-1">See Our Services!</h2>
 
               <p><a href="#" class="btn btn-black py-3 px-5">Book Now!</a></p>
             </div>
@@ -213,8 +225,6 @@
       </div>  
 
     </div>
-
-
 
     <div class="site-section">
       <div class="container">
@@ -237,8 +247,8 @@
           
             <div class="h-100 bg-light site-block-feature-7" >
             <div class="container" style="background-color:white ;">
-              <img src="<?php echo $result1[$i]['product_image'];?>" alt="Image" class="img-fluid">
-              <button class="btn"><a href="./single_product.php?id=<?php echo $result1[$i]['product_id']?>"</a><i class="icomoon icon-eye" style="color:transparent ;"></i></button> 
+            <a href="./single_product.php?id=<?php echo $result1[$i]['product_id']?>"</a><img src="<?php echo $result1[$i]['product_image'];?>" alt="Image" class="img-fluid">
+              
               </div>
               
               <div class="p-4 p-lg-5" style="background-color:white;">

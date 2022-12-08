@@ -76,7 +76,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">ADD BRAND</span>
+              <span class="menu-title">PRODUCT BRAND</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -84,7 +84,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
-              <span class="menu-title">ADD CATEGORIES</span>
+              <span class="menu-title">PRODUCT CATEGORY</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -92,7 +92,23 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">ADD PRODUCTS</span>
+              <span class="menu-title">SERVICE CATEGORY</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="product.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">ADD PRODUCT</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="service.php">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">ADD SERVICE</span>
             </a>
           </li>
           

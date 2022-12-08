@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,80 +24,25 @@
     <link rel="stylesheet" href="../css/css/aos.css">
 
     <link rel="stylesheet" href="../css/css/style.css">
-
-    <style>
-
-
-.container img {
-  width: 100%;
-  height: auto;
-  
-}
-
-.container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: transparent;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.container .btn:hover {
-  background-color: black;
-}
-    </style>
+    
   </head>
   <body>
   <?php 
-       require('../controllers/product_controller.php');
+      
+      require('../controllers/product_controller.php');
+     
+       
+    
+  
       
        
-        
-      
-        
-      
-    ?>
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-    
-
-
-
-    </head>
-  <body>
-  <?php 
-  
-  session_start();
-  if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
-    header('location:../login/login.php');
-  }
-  
-  
-  
-  $id = $_SESSION['customer_id'];
+          
+           
+          
+            
+          
+        ?>
    
-      
-       require('../controllers/product_controller.php');
-      
-        
-      
-    ?>
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -116,21 +59,22 @@
 
     <header class="site-navbar py-1" role="banner">
 
-<div class="container-fluid">
-  <div class="row align-items-center">
-    
-    <div class="col-6 col-xl-2" data-aos="fade-down">
-      <h1 class="mb-0"><a href="../index.php" class="text-black h2 mb-0">DiasBeauty</a></h1>
-    </div>
-    <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-      <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="index.php" class="text-black h2 mb-0">Dias Beauty</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-        <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-          <li class="has-children">
-            <a href="../index.php">Home</a>
-            
-          </li>
-          <li  class="has-children active">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="has-children active">
+                  <a href="../view/index.php">Home</a>
+                </li>
+
+
+                <li  class="has-children active">
                            <a href="all_products.php">Products</a>
 
                          <ul class="dropdown">
@@ -151,7 +95,7 @@
                         </ul>
                        
                 </li>
-          <li class="has-children active">
+                <li class="has-children active">
             <a href="services.php">Services</a>
             <ul class="dropdown">
                  <?php
@@ -167,26 +111,21 @@
             
             </ul>
           </li>
-
-          <li><a href="about.php">About</a></li>
-          
-  
-        </ul>
-      
-       
         
+                <li><a href="about.php">About</a></li>
+                
+                
+              </ul>
+            </nav>
+          </div>
 
-        
-      </nav>
-    </div>
-   
-<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 
                 <?php 
 
-        
+          session_start()  ; 
 if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])) {
  
 ?>
@@ -208,7 +147,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
                     $total3= $total1["count"]+$total2["count"]; ?>
                 <li>
                
-                <a style="padding-right: -10px; ;" href="shoping-cart.php" ><span style="color:black;" class="icon-shopping-cart"><?php echo $total3;?></p></span></a><p style="position:top; padding-left:-10px;">
+                <a style="padding-right: -10px; ;" href="shoping-cart.php" ><span style="color:black;" class="icon-shopping-cart"></span></a><p style="position:top; padding-left:-10px;"><?php echo $total3;?></p>
                
                 </li>
                   <li>
@@ -231,22 +170,39 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
 
           </div>
 
-</header>
+        </div>
+      </div>
+      
+    </header>
 
   
-    
+
    
 
     <div class="slide-one-item home-slider owl-carousel">
-   
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      
+      <div class="site-blocks-cover" style="background-image: url(../images/images/blackgirlhair.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h2 class="text-white font-weight-light mb-4 display-1 line-height-1">Hair Style &amp; Prices</h2>
+              <h5 class="text-white font-weight-light text-uppercase">Welcome to DiasBeauty Studio</h5>
+              <h2 class="text-white font-weight-light mb-2 display-1">Beauty Salon Experts</h2>
 
-              <p><a href="#" class="btn btn-black py-3 px-5">Book Now!</a></p>
+              <p><a href="./view/services.php" class="btn btn-black py-3 px-5">Book Now!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+      <div class="site-blocks-cover" style="background-image: url(../images/images/blackgirlblackhair.webp);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+              <h2 class="text-white font-weight-light mb-2 display-1">Beautiful Hair, Healthy You!</h2>
+
+              <p><a href="./view/services.php" class="btn btn-black py-3 px-5">Book Now!</a></p>
             </div>
           </div>
         </div>
@@ -255,50 +211,77 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
     </div>
 
 
-
     <div class="site-section">
       <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 text-center">
+            <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Welcome to</span> <span class="d-block display-4 line-height-1"><em class="text-primary font-weight-bold">Dias Beauty Studio</em></span></h3>
+            <p> The studio offers a variety of services for all your beauty needs. At Dias Beauty Studio , you can be assured quality service as its best as all our workers are professionals constantly in taraining</p>
+            <p><a href="./view/about.html"><small class="text-uppercase font-weight-bold">Read More</small></a></p>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="h-100 hover-bg-enlarge">
+              <div class="bg-image h-100 bg-image-md-height" style="background-image: url('images/images/blackgirlblackhair2.jpeg');"></div>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="border p-4 d-flex align-items-center justify-content-center h-100">
+              <div class="text-center">
+                <h2 class="text-primary h2 mb-5">Opening Hours</h2>
+                <p class="mb-4">
+                  <span class="d-block font-weight-bold">Mon – Fri </span>
+                  10:00 AM – 8:30 PM
+                </p>
 
-      
-                      
-                       
-        
-        <div class="row" style="align-items:center ;">
+                <p class="mb-4">
+                  <span class="d-block font-weight-bold">Saturday</span>
+                  Closed
+                </p>
 
-        <?php
-
-
-if(isset($_GET['id'])){
- $products = select_by_category_ctr($_GET['id']);
- $i=0;
-
-if ($products!=false){
-             while($i<count($products)){
-       
-   ?>
-       
-          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5" name= "single_product" style="background-color:white ;">
-          
-            <div class="h-100 bg-light site-block-feature-7" >
-            <div class="container" style="background-color:white ;">
-              <img src="<?php echo $products[$i]['product_image'];?>" alt="Image" class="img-fluid">
-              <button class="btn"><a href="./single_product.php?id=<?php echo $products[$i]['product_id'];?>"</a><i class="icomoon icon-eye" style="color:transparent ;"></i></button> 
-              </div>
-              
-              <div class="p-4 p-lg-5" style="background-color:white;">
-                <h3 class="text-black h4"><?php echo $products[$i]['product_title'];?></h3>
-                <p><strong class="font-weight-bold text-primary" > GHC <?php echo $products[$i]['product_price'];?>.00</strong>
-                 <a href="../actions/add_cart.php?id=<?php echo $products[$i]['product_id']?>" name="addtocart "class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>   </p>
+                <p class="mb-4">
+                  <span class="d-block font-weight-bold">Sunday</span>
+                  10:00 AM – 8:30 PM
+                </p>
               </div>
             </div>
           </div>
-          <?php
-          $i++;     
-   } }else {
-    echo "<div style='text-align:center;'> <h1 class='mb-0' > No products available</h1></div>";
-   } }
-              ?>
-         
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7">
+            <h2 class="site-section-heading font-weight-light text-black text-center">Featured Services</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
+            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
+              <span class="icon flaticon-razor display-3 text-primary mb-4 d-block"></span>
+              <h3 class="text-black h4">Braiding</h3>
+              <p>Quality and neat braids of all types at affordable prices</p>
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
+            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
+              <span class="icon flaticon-location-pin display-3 text-primary mb-4 d-block"></span>
+              <h3 class="text-black h4">Wig Making </h3>
+              <p>Have bundles? Well whether you do or not , we offer wig construction.</p>
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
+            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
+              <span class="icon flaticon-shave display-3 text-primary mb-4 d-block"></span>
+              <h3 class="text-black h4">Manicure</h3>
+              <p>Get those fingers cleaned and looking amazing with a touch of Dias</p>
+              
+            </div>
+          </div>
 
         </div>
       </div>
@@ -308,35 +291,37 @@ if ($products!=false){
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5">
-            <img src="../images/images/blowbrush.jpg" alt="Image" class="img-md-fluid">
+            <img src="../images/images/nails2.jpeg" alt="Image" class="img-md-fluid">
           </div>
           <div class="col-lg-6 bg-white p-md-5 align-self-center">
-            <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">New Tool!</h2>
-            <p class="text-black lead"><em>&ldquo;To the natural girl with 4C hair , youre going to love this one , visit our products to cop yourself one of our newest produtcso&rdquo;</em></p>
-            <p class="lead text-black"></p>
+            <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">Tried Our Pressons!</h2>
+            <p class="text-black lead"><em>&ldquo;Aside our walk-in , in person services.Dias Beauty Studio offers a variety of stylish , sophisticated press on nails for the go , you can check from our products to purchase yours today!&rdquo;</em></p>
+            <p class="lead text-black"> </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="site-section">
+
+    <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url(images/hero_bg_2.jpg); background-attachment: fixed;">
       <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12">
-            <h2 class="mb-4 text-black">We want your hair to look fabulous</h2>
-            <p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5 text-white">Visit Our Salon Now</a></p>
+        <div class="row align-items-center justify-content-center text-center">
+
+          <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="text-white font-weight-light mb-5 display-3">Experience Our Outstanding Services</h2>
+            <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-single-big d-inline-block popup-vimeo"><span class="icon-play"></span></a>
           </div>
         </div>
       </div>
-    </div>
+    </div>  
 
-
+    
     <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Hairsal</h3>
+              <h3 class="footer-heading mb-4">About DiasBeauty</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
             </div>
 
@@ -350,20 +335,13 @@ if ($products!=false){
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Barbers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Team</a></li>
+                  <li><a href="../view/index.php">Home</a></li>
+                  <li><a href="../view/services.php">Services</a></li>
+                  <li><a href="../view/about.php">About</a></li>
+                
                 </ul>
               </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Membership</a></li>
-                </ul>
-              </div>
+              
             </div>
 
             
@@ -373,20 +351,7 @@ if ($products!=false){
           <div class="col-lg-4 mb-5 mb-lg-0">
            
 
-            <div class="mb-5">
-              <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
-
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
-                  </div>
-                </div>
-              </form>
-
-            </div>
+            
 
           </div>
           
@@ -419,8 +384,8 @@ if ($products!=false){
   <script src="../js/js/bootstrap.min.js"></script>
   <script src="../js/js/owl.carousel.min.js"></script>
   <script src="../js/js/jquery.stellar.min.js"></script>
-  <script src="../js/js/jquery.countdown.min.js"></script>
-  <script src="./js/js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/js/js/jquery.countdown.min.js"></script>
+  <script src="../js/js/jquery.magnific-popup.min.js"></script>
   <script src="../js/js/bootstrap-datepicker.min.js"></script>
   <script src="../js/js/aos.js"></script>
 

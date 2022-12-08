@@ -21,7 +21,8 @@ if(isset($_GET['id'])){
     $id=$_GET['id'];
     $customerid=$_SESSION['customer_id'];
     $customerip=$_SERVER['REMOTE_ADDR'];
-    $qty=3;
+    $qty=1;
+    
 
    }
 
@@ -39,6 +40,7 @@ if(isset($_GET['id'])){
         echo "fail";
     }
    }else{
+    
     header("Location: ../view/all_products.php?error=The Item is already in your cart");
    }
 

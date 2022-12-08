@@ -25,10 +25,10 @@
   <body>
   <?php 
         require('../controllers/product_controller.php');
-        $result = select_all_records_ctr();
+        $result = select_all_servicecategories_ctr();
         
     ?>
-<?php
+    <?php
 session_start();
 if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'] and $_SESSION['customer_role']!=1) ){
   $_SESSION['customer_name'];
@@ -229,18 +229,18 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Brands</h4>
+                    <h4 class="card-title">Service Categories</h4>
                     <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Brand</h4>
+                    <h4 class="card-title">Add Category</h4>
                     
-                    <form class="form-inline" action ="../actions/add_brand.php" method= "POST">
+                    <form class="form-inline" action ="../actions/add_servicecategory.php" method= "POST">
                       <label class="sr-only" for="inlineFormInputName2">Name</label>
                       
                       <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
                       <div class="input-group mb-2 mr-sm-2">
                         
-                        <input type="text" class="form-control" name="bname" id="bnmae" placeholder="Brand name">
+                        <input type="text" class="form-control" name="sname" id="sname" placeholder="Category Name">
                       </div>
                       
                       <button type="submit" name="save" class="btn btn-primary mb-2">Add</button>
@@ -255,7 +255,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
 
                           <tr>
                             <th> # </th>
-                            <th> Brandname </th>
+                            <th> Category Name </th>
                             
                           </tr>
                         </thead>
@@ -265,16 +265,17 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
    
                             foreach($result as $record ){
                            {
-                            $id = $record['brand_id'];
-                            $bname = $record['brand_name'];
+                            $id = $record['scat_id'];
+                            $sname = $record['scat_name'];
           
                             echo '<tr><th scope="row">'
                             .$id.' </th>
-                           <td>'.$bname.'</td>
+                           <td>'.$sname.'</td>
 
                            <td>
-                           <button class="btn btn-primary"><a href="../admin/updatebrandform.php?updateid='.$id.'" class="text-light">Update</a></button>
-                           <button class="btn btn-primary"><a href="../actions/delete_brand.php?deleteid='.$id.'"class="text-light">Delete</a></button>
+                           
+                           <button class="btn btn-primary"><a href="../admin/updateservicecategoryform.php?updateid='.$id.'" class="text-light">Update</a></button>
+                           <button class="btn btn-primary"><a href="../actions/delete_servicecategory.php?deleteid='.$id.'"class="text-light">Delete</a></button>
                            </td>
                            </tr>';};
                            }
@@ -352,5 +353,15 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
   </body>
 </html>

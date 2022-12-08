@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,7 +93,7 @@
   $id = $_SESSION['customer_id'];
    
       
-       require('../controllers/product_controller.php');
+   
       
         
       
@@ -232,7 +230,6 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
           </div>
 
 </header>
-
   
     
    
@@ -269,33 +266,33 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
 
 
 if(isset($_GET['id'])){
- $products = select_by_category_ctr($_GET['id']);
+ $service = select_by_servicecategory_ctr($_GET['id']);
  $i=0;
 
-if ($products!=false){
-             while($i<count($products)){
+if ($service!=false){
+             while($i<count($service)){
        
    ?>
        
           <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5" name= "single_product" style="background-color:white ;">
           
-            <div class="h-100 bg-light site-block-feature-7" >
-            <div class="container" style="background-color:white ;">
-              <img src="<?php echo $products[$i]['product_image'];?>" alt="Image" class="img-fluid">
-              <button class="btn"><a href="./single_product.php?id=<?php echo $products[$i]['product_id'];?>"</a><i class="icomoon icon-eye" style="color:transparent ;"></i></button> 
-              </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
+            <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
+            <div class="container" style="background-color:transparent;">
+            <a href="./booking.php?id=<?php echo $service[$i]['service_id']?>"</a><img src="<?php echo $service[$i]['service_image'];?>" alt="Image" class="img-fluid">
               
-              <div class="p-4 p-lg-5" style="background-color:white;">
-                <h3 class="text-black h4"><?php echo $products[$i]['product_title'];?></h3>
-                <p><strong class="font-weight-bold text-primary" > GHC <?php echo $products[$i]['product_price'];?>.00</strong>
-                 <a href="../actions/add_cart.php?id=<?php echo $products[$i]['product_id']?>" name="addtocart "class="pl-0 pr-3 text-black"><span class="icon-shopping-cart"></span></a>   </p>
               </div>
+              <span class="icon flaticon-razor display-3 text-primary mb-4 d-block"></span>
+              <h3 class="text-black h4"><?php echo $service[$i]['service_title'];?></h3>
+              <p><?php echo $service[$i]['service_desc'];?></p>
+              <p><strong class="font-weight-bold text-primary">GHC<?php echo $servuce[$i]['service_price'];?>.00</strong></p>
             </div>
+          </div>
           </div>
           <?php
           $i++;     
    } }else {
-    echo "<div style='text-align:center;'> <h1 class='mb-0' > No products available</h1></div>";
+    echo "<div style='text-align:center;'> <h1 class='mb-0' > No service available</h1></div>";
    } }
               ?>
          
@@ -312,7 +309,7 @@ if ($products!=false){
           </div>
           <div class="col-lg-6 bg-white p-md-5 align-self-center">
             <h2 class="display-1 text-black line-height-1 site-section-heading mb-4 pb-3">New Tool!</h2>
-            <p class="text-black lead"><em>&ldquo;To the natural girl with 4C hair , youre going to love this one , visit our products to cop yourself one of our newest produtcso&rdquo;</em></p>
+            <p class="text-black lead"><em>&ldquo;To the natural girl with 4C hair , youre going to love this one , visit our service to cop yourself one of our newest produtcso&rdquo;</em></p>
             <p class="lead text-black"></p>
           </div>
         </div>
