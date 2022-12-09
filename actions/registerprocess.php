@@ -11,7 +11,7 @@ if(isset($_POST['save'])){
     $country= $_POST['customer_country'];
     $city= $_POST['customer_city'];
     $number = $_POST['customer_contact'];
-    $role= 1;
+    $role= 2;
 
 
     $result = insert_record_ctr($name,$email,$password,$country,$city,$number,$role);
