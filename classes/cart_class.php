@@ -70,7 +70,7 @@ function deduct_quantity_cls($id, $customerid){
 
 //DELETE
 function delete_from_cart_cls($id){
-	$sql= "DELETE FROM cart where c_id = '$id' ";
+	$sql= "DELETE FROM cart where p_id = '$id' ";
 	return $this->db_query($sql);
 
 
