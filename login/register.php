@@ -36,7 +36,7 @@
 		      			<input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="type your name" required>
 		      		</div>
                       <div class="form-group">
-		      			<input type="text" class="form-control" name="customer_email" id="customer_email" placeholder="type your Email"  title="Uppercase (A-Z) and lowercase (a-z) English letters.
+		      			<input type="email" class="form-control" name="customer_email" id="customer_email" placeholder="type your Email"  title="Uppercase (A-Z) and lowercase (a-z) English letters.
 Digits (0-9).
 Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~
 Character . ( period, dot or fullstop) provided that it is not the first or last character and it will not come one after the other." required>
