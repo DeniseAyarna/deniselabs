@@ -4,7 +4,7 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
 	header('location:../login/login.php');
 }
 
-require('../controllers/cart_controllers.php');
+require('../controllers/product_controller.php');
 
 $id = $_SESSION['customer_id'];
 $email=$_SESSION['customer_email']
@@ -97,7 +97,7 @@ $email=$_SESSION['customer_email']
   <body>
   <?php 
   
-  session_start();
+ 
   if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
     header('location:../login/login.php');
   }
@@ -107,7 +107,7 @@ $email=$_SESSION['customer_email']
   $id = $_SESSION['customer_id'];
    
       
-       require('../controllers/product_controller.php');
+      
       
         
       

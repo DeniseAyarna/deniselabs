@@ -236,6 +236,23 @@ $sql="select orders.order_id,orders.customer_id,orders.invoice_no,orders.order_d
 return $this->db_fetch_all($sql);
 }
 
+
+function select_allinservicecart_cls($cid){
+
+    return $this->db_fetch_all("select * from servicecart inner join services on  p_id = service_id where c_id = '$cid'  ");
+}
+
+function select_service_cart_cls($id){
+
+	
+		return $this->db_fetch_all("SELECT * from servicecart where p_id='$id'");
+}
+
+
+function select_allincart_cls($cid){
+
+    return $this->db_fetch_all("select * from cart inner join products on  p_id = product_id where c_id = '$cid'  ");
+}
 }
 ?>
 

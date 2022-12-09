@@ -251,4 +251,18 @@ function  show_orders_ctr(){
     // Calling select all records method in the general class and returns true or false
     return $item->  show_orders_cls();
 }
+
+function select_allinservicecart_ctr($cid){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_allinservicecart_cls($cid);
+}
+
+function select_allincart_ctr($cid){
+    // Creates an instance of the general class and appends it to $item
+    $item = new product_class();
+    // Calling select all records method in the general class and returns true or false
+    return $item->select_allincart_cls($cid);
+}
 ?>

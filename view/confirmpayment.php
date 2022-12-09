@@ -4,11 +4,11 @@ if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and 
 	header('location:../login/login.php');
 }
 
-require('../controllers/cart_controllers.php');
+
 
 $id = $_SESSION['customer_id'];
 $email =$_SESSION['customer_email'];
- echo $email;
+
 
 
 
@@ -100,7 +100,7 @@ $email =$_SESSION['customer_email'];
   <body>
   <?php 
   
-  session_start();
+
   if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
     header('location:../login/login.php');
   }
@@ -145,44 +145,8 @@ $email =$_SESSION['customer_email'];
             <a href="../index.php">Home</a>
             
           </li>
-          <li  class="has-children active">
-                           <a href="all_products.php">Products</a>
-
-                         <ul class="dropdown">
-                          <?php
-                        $result1= select_all_categories_ctr();
-                        foreach ($result1 as $record){
-                          
-                        ?>
-                        
-                        
-                        <li> <a href="categoryproduct.php?id=<?php echo $record['cat_id']?>"><?php echo $record['cat_name'];?>
-                       </a>
-                        </li>
-                       <?php
-                        }
-                       ?>
-
-                        </ul>
-                       
-                </li>
-          <li class="has-children active">
-            <a href="services.php">Services</a>
-            <ul class="dropdown">
-                 <?php
-                        $result2= select_all_servicecategories_ctr();
-                        foreach ($result2 as $record){
-                          
-                ?>
-              <li><a href="categoryservice.php?id=<?php echo $record['scat_id']?>"><?php echo $record['scat_name'];?></a>
-              </li>
-                      <?php
-                        }
-                       ?>
-            
-            </ul>
-          </li>
-
+        
+        
           <li><a href="about.php">About</a></li>
           
   

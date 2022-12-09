@@ -95,7 +95,7 @@
   $id = $_SESSION['customer_id'];
    
       
-       require('../controllers/product_controller.php');
+     
       
         
       
