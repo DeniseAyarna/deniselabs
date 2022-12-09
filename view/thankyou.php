@@ -68,7 +68,7 @@
   <body>
   <?php 
   
-  session_start();
+
   if(empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['customer_id'])){
     header('location:../login/login.php');
   }
@@ -78,7 +78,7 @@
   $id = $_SESSION['customer_id'];
    
       
-       require('../controllers/product_controller.php');
+     
       
         
       
